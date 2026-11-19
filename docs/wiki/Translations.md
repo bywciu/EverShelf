@@ -14,6 +14,7 @@ EverShelf uses JSON translation files in the `translations/` folder. The app aut
 | 🇫🇷 French | `translations/fr.json` | ✅ Complete |
 | 🇪🇸 Spanish | `translations/es.json` | ✅ Complete |
 | 🇨🇳 Chinese (simplified) | `translations/zh.json` | ✅ Complete |
+| 🇵🇱 Polish | `translations/pl.json` | ✅ Complete |
 
 `python3 scripts/i18n-audit.py` reports the current count and exits `1` the moment a
 locale falls behind; `python3 scripts/i18n-value-audit.py` lists the keys whose value is
@@ -62,7 +63,7 @@ Open `pt.json` in your editor and translate every **value** (leave the **keys** 
 Open `assets/js/app.js` and add the code + native name to `_SUPPORTED_LANGS` (~line 1165):
 
 ```js
-const _SUPPORTED_LANGS = { it: 'Italiano', en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español', zh: '简体中文' };
+const _SUPPORTED_LANGS = { it: 'Italiano', en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español', zh: '简体中文', pl: 'Polski' };
 ```
 
 That object drives both the detection allow-list and the language `<select>` in
@@ -125,7 +126,7 @@ The file is a nested JSON object. Here are the main sections:
 ## Updating Existing Translations
 
 If a new feature adds keys to `it.json` (the base), the same keys must be added to the
-other five files (`en`, `de`, `fr`, `es`, `zh`).
+other six files (`en`, `de`, `fr`, `es`, `zh`, `pl`).
 
 Locally:
 

@@ -19,7 +19,7 @@
  * mapToLocalCategory() in assets/js/app.js matches them against CATEGORY_ICONS
  * keys, so they must never be translated — only the sentence around them is.
  *
- * @param string $lang One of it|en|de|fr|es|zh (see recipeNormalizeLang()).
+ * @param string $lang One of it|en|de|fr|es|zh|pl (see recipeNormalizeLang()).
  * @return array<string,string> intro, lang_rule, json_rule, name, brand,
  *                              category, search_terms, confidence, description.
  *                              Unknown locales fall back to the English set.
@@ -153,6 +153,20 @@ function evershelfIdentifyPromptFragments(string $lang): array {
             'search_terms' => '用于在数据库中查找该产品的搜索词（例如：greek yogurt fage, barilla spaghetti pasta）',
             'confidence'   => '高/中/低',
             'description'  => '对所识别产品的简短描述',
+        ],
+        'pl' => [
+            'intro'        => 'Przeanalizuj to zdjęcie produktu. Rozpoznaj produkt możliwie jak najdokładniej.',
+            'lang_rule'    => 'WAŻNE: nazwę, opis i pewność wpisz po polsku.',
+            'json_rule'    => 'Odpowiedz WYŁĄCZNIE poprawnym JSON-em (bez markdown, bez backticków):',
+            'name'         => 'Nazwa produktu, możliwie jak najbardziej szczegółowa (np. Jogurt grecki naturalny)',
+            'brand'        => 'Marka, jeśli widoczna (np. Fage, Müller) albo pusty ciąg',
+            'category'     => "Klucz kategorii: użyj DOKŁADNIE jednego z tych tokenów, bez tłumaczenia — {$categories}",
+            'unit'         => 'Jednostka spiżarni, dokładnie JEDNA z: pz (sztuki, np. 2 pomidory, 1 melon), g (ważone, np. ser z lady), ml (płyny), conf (zamknięte opakowanie: słoik, torebka, butelka)',
+            'quantity'     => 'Prawdopodobna ilość przy JEDNYM zakupie tego produktu (np. 2 dla dwóch pomidorów, 500 dla 500 g sera, 1 dla słoika)',
+            'package_size' => 'Waga/objętość wydrukowana na opakowaniu (np. "500 g", "1 l") albo pusty ciąg, gdy to nie opakowanie',
+            'search_terms' => 'Frazy do wyszukania produktu w bazie danych (np. greek yogurt fage, barilla spaghetti pasta)',
+            'confidence'   => 'wysoka/średnia/niska',
+            'description'  => 'Krótki opis rozpoznanego produktu',
         ],
     ];
 

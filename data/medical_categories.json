@@ -72,6 +72,16 @@
                     "肌肉痛",
                     "炎症",
                     "牙痛"
+                ],
+                "pl": [
+                    "ból głowy",
+                    "migrena",
+                    "gorączka",
+                    "ból",
+                    "ból pleców",
+                    "ból mięśni",
+                    "stan zapalny",
+                    "ból zęba"
                 ]
             }
         },
@@ -147,6 +157,17 @@
                     "腹泻",
                     "腹胀",
                     "恶心"
+                ],
+                "pl": [
+                    "żołądek",
+                    "refluks",
+                    "zgaga",
+                    "nadkwasota",
+                    "niestrawność",
+                    "biegunka",
+                    "probiotyki",
+                    "wzdęcia",
+                    "nudności"
                 ]
             }
         },
@@ -212,6 +233,17 @@
                     "喉咙痛",
                     "鼻塞",
                     "流感"
+                ],
+                "pl": [
+                    "przeziębienie",
+                    "kaszel",
+                    "flegma",
+                    "śluz",
+                    "ból gardła",
+                    "gardło",
+                    "zatkany nos",
+                    "katar",
+                    "grypa"
                 ]
             }
         },
@@ -272,6 +304,15 @@
                     "荨麻疹",
                     "花粉症",
                     "蚊虫叮咬"
+                ],
+                "pl": [
+                    "alergia",
+                    "swędzenie",
+                    "kichanie",
+                    "pokrzywka",
+                    "katar sienny",
+                    "ugryzienie",
+                    "komar"
                 ]
             }
         },
@@ -389,6 +430,24 @@
                     "皮疹",
                     "真菌",
                     "皮肤霜"
+                ],
+                "pl": [
+                    "rana",
+                    "rany",
+                    "skaleczenie",
+                    "dezynfekcja",
+                    "plaster",
+                    "plastry",
+                    "bandaż",
+                    "oparzenie",
+                    "siniak",
+                    "krew",
+                    "zapalenie skóry",
+                    "rumień",
+                    "egzema",
+                    "wysypka",
+                    "grzybica",
+                    "krem do skóry"
                 ]
             }
         },
@@ -442,6 +501,14 @@
                     "结膜炎",
                     "眼痒",
                     "流泪"
+                ],
+                "pl": [
+                    "oko",
+                    "oczy",
+                    "suche oczy",
+                    "zapalenie spojówek",
+                    "podrażnienie oczu",
+                    "łzy"
                 ]
             }
         },
@@ -506,6 +573,15 @@
                     "镁",
                     "钾",
                     "腿"
+                ],
+                "pl": [
+                    "skurcz",
+                    "skurcze",
+                    "mięśnie",
+                    "naciągnięcie",
+                    "magnez",
+                    "potas",
+                    "nogi"
                 ]
             }
         },
@@ -577,6 +653,17 @@
                     "铁",
                     "欧米伽3",
                     "疲劳"
+                ],
+                "pl": [
+                    "suplement",
+                    "suplementy",
+                    "witaminy",
+                    "witamina",
+                    "witamina c",
+                    "witamina d",
+                    "żelazo",
+                    "omega 3",
+                    "zmęczenie"
                 ]
             }
         }

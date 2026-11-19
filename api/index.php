@@ -315,15 +315,6 @@ if (($_GET['action'] ?? '') === 'kiosk_update') {
     exit;
 }
 
-// ── Health Bridge OTA metadata (LAN self-host; no DB required) ───────────────
-// A LAN-only phone may have no internet at all, so the bridge asks its OWN server
-// first and only falls back to the GitHub release. Nothing secret is disclosed:
-// a version number, a versionCode and the APK URL of this same instance.
-if (($_GET['action'] ?? '') === 'health_bridge_update') {
-    getHealthBridgeUpdate();
-    exit;
-}
-
 // ── App bootstrap — the API token is disclosed only after pairing ────────────
 if (($_GET['action'] ?? '') === 'app_bootstrap') {
     checkRateLimit('app_bootstrap');
@@ -4419,12 +4410,9 @@ function clientLog(): void {
     $deviceIn = is_array($input) ? preg_replace('/[^a-z\-]/', '', strtolower((string)($input['device'] ?? ''))) : '';
     if (in_array($deviceIn, ['kiosk', 'tablet', 'phone', 'desktop'], true)) $device = $deviceIn;
     $source = ($device === 'kiosk') ? 'kiosk' : 'app';
-    if (is_array($input) && in_array(($input['source'] ?? ''), ['app', 'kiosk', 'health_bridge'], true)) {
-        // The Health Bridge declares itself: its line goes to its own river
-        // (data/logs/health-YYYY-MM-DD.log) instead of mixing with the phones'.
+    if (is_array($input) && in_array(($input['source'] ?? ''), ['app', 'kiosk'], true)) {
         $source = (string)$input['source'];
     }
-    $logRiver = $source === 'kiosk' ? 'kiosk' : ($source === 'health_bridge' ? 'health' : 'app');
     $levelHint = is_array($input) ? (string)($input['level'] ?? '') : '';
     $ts = date('Y-m-d H:i:s');
     // A public sink: the lines are whatever the client sent, so they can carry the
@@ -4450,9 +4438,9 @@ function clientLog(): void {
         $kept[$level][] = preg_replace('/^\[(DEBUG|INFO|WARN|WARNING|ERROR|ERR)\]\s*/i', '', $raw);
         $lines[] = "[$ts] [$device] $raw";          // the legacy mirror below
     }
-    // One file per source (`app` / `kiosk` / `health`) and per day, leveled.
+    // One file per source (`app` / `kiosk`) and per day, leveled.
     foreach ($kept as $level => $group) {
-        _clientLogWrite($logRiver, $level, $group, $device);
+        _clientLogWrite($source, $level, $group, $device);
     }
     if ($lines) {
         // Keep log under 100KB — truncate oldest if needed
@@ -10183,43 +10171,6 @@ function getConsumptionPredictions(PDO $db): void {
 
 // ===== SETTINGS =====
 
-/**
- * LAN OTA metadata for the Android Health Bridge (companion app).
- *
- * The bridge is built by `.github/workflows/build-health-bridge.yml`, which also copies
- * the APK + `releases/health-bridge-version.json` into the repository (the same pattern
- * the kiosk uses). A LAN-only install has no route to github.com, so this endpoint is the
- * only update source it can reach; the client falls back to the GitHub release when this
- * answers `not_available`.
- */
-function getHealthBridgeUpdate(): void {
-    $root     = dirname(__DIR__);
-    $jsonPath = $root . '/releases/health-bridge-version.json';
-    $apkPath  = $root . '/releases/evershelf-health-bridge.apk';
-    if (!is_file($jsonPath) || !is_file($apkPath)) {
-        echo json_encode(['success' => false, 'error' => 'not_available']);
-        return;
-    }
-    $meta = json_decode((string)file_get_contents($jsonPath), true);
-    if (!is_array($meta)) {
-        echo json_encode(['success' => false, 'error' => 'invalid_metadata']);
-        return;
-    }
-    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-        || strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https'
-        ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-    $script = $_SERVER['SCRIPT_NAME'] ?? '/api/index.php';
-    $basePath = preg_replace('#/api/index\.php$#', '', $script) ?: '';
-    $defaultApkUrl = $scheme . '://' . $host . $basePath . '/releases/evershelf-health-bridge.apk';
-    echo json_encode([
-        'success'      => true,
-        'version'      => (string)($meta['version'] ?? ''),
-        'version_code' => (int)($meta['version_code'] ?? 0),
-        'apk_url'      => (string)($meta['apk_url'] ?? $defaultApkUrl),
-    ], JSON_UNESCAPED_UNICODE);
-}
-
 function getKioskUpdate(): void {
     $root     = dirname(__DIR__);
     $jsonPath = $root . '/releases/kiosk-version.json';
@@ -13272,7 +13223,7 @@ PROMPT;
         } else {
             $lang = substr($lang, 0, 2);
         }
-        return in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh'], true) ? $lang : 'en';
+        return in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh', 'pl'], true) ? $lang : 'en';
     }
 
     function recipeLangName(string $lang): string {
@@ -13283,6 +13234,7 @@ PROMPT;
             'fr' => 'French',
             'es' => 'Spanish',
             'zh' => 'Simplified Chinese',
+            'pl' => 'Polish',
         ][$lang] ?? 'English';
     }
 
@@ -13563,6 +13515,52 @@ PROMPT;
                 'prompt_coerenza' => '步骤↔食材一致性：`steps` 中提到的每种食材必须出现在 `ingredients` 中，或者是水/盐/胡椒/油或少量香草。禁止在步骤中写黄油/奶油/鸡蛋/牛奶/酸奶/奶酪等，如果该产品不在储藏室中。',
                 'prompt_user_prefs' => '用户偏好：',
                 'prompt_respond_json' => '仅回复有效 JSON（无 markdown）：',
+            ],
+            'pl' => [
+                'status_analyze_pantry' => '📦 Analizuję spiżarnię...',
+                'status_products_found' => 'Znaleziono produktów: {n}',
+                'status_passed_ai' => ' (przekazano do AI: {n})',
+                'status_all_passed_ai' => ' — wszystko przekazano do AI',
+                'status_urgent' => '⚠️ Pilnych: {n}: {items}',
+                'status_evaluate_ingredients' => '🧠 Oceniam dostępne składniki...',
+                'status_preparing_recipe' => '👨‍🍳 Przygotowuję przepis...',
+                'status_recipe_with' => '🥘 Przepis z użyciem: {a} i {b}',
+                'status_variant' => ' — wariant #{n}',
+                'status_dish_based_on' => '🎯 Danie na bazie: {type}',
+                'status_creating_full_recipe' => '✍️ Tworzę pełny przepis...',
+                'status_quota_wait' => '⏳ Wyczerpano limit TPM ({model}), czekam {s} s... (próba {a}/{m})',
+                'status_retry_generation' => '✍️ Ponawiam generowanie...',
+                'status_switch_model' => '🔄 Zmieniam model → {model}...',
+                'status_mealie_search' => '📚 Szukam przepisów w Mealie…',
+                'status_mealie_found' => '✅ Znaleziono przepis w Mealie',
+                'error_pantry_empty' => 'Spiżarnia jest pusta!',
+                'error_gemini_api' => 'Błąd API Gemini',
+                'error_cannot_generate' => 'Nie udało się wygenerować przepisu',
+                'error_empty_reply' => 'Pusta odpowiedź od Gemini',
+                'error_not_cookable' => 'Z tego, co jest w spiżarni, nie da się ułożyć kompletnego przepisu: dodaj coś lub spróbuj innego pomysłu.',
+                'prompt_lang_rule' => 'WAŻNE: wszystkie tekstowe pola przepisu pisz wyłącznie po polsku. Nie używaj włoskiego ani niemieckiego.',
+                'prompt_step_example' => 'Krok 1…',
+                'tools_title' => 'Potrzebny sprzęt',
+                'prompt_option_veloce' => 'SZYBKO: maks. 15–20 minut łącznie.',
+                'prompt_option_pocafame' => 'MAŁY APETYT: lekka porcja, przekąska lub sałatka.',
+                'prompt_option_scadenze' => 'PRIORYTET TERMINÓW: najpierw użyj produktów, którym wkrótce kończy się termin.',
+                'prompt_option_salutare' => 'ZDROWO: pełnowartościowe składniki, warzywa, mało tłuszczu.',
+                'prompt_option_opened' => 'PRIORYTET OTWARTYCH: najpierw użyj produktów oznaczonych [OPENED].',
+                'prompt_option_zerowaste' => 'ZERO WASTE: wykorzystaj jak najwięcej składników z kończącym się terminem.',
+                'prompt_option_fuel' => 'MOJE TEMPO (Fuel Mode): wygeneruj przepis na podstawie danych biometrycznych (profil), CELU (utrzymanie/redukcja/przyrost) i dzisiejszej aktywności fizycznej. Dostosuj kalorie/makroskładniki do poniższego MEAL BUDGET.',
+                'prompt_preferences_header' => '⚠️ OBOWIĄZKOWE PREFERENCJE (ZAWSZE ich przestrzegaj, to nie są sugestie):',
+                'prompt_no_match' => 'Nie znaleziono idealnie pasującego składnika — użyj najbliższego dostępnego i zaznacz to w nutrition_note.',
+                'prompt_match_header' => 'Dostępne składniki ze spiżarni zgodne z tym typem (użyj co najmniej jednego jako BAZY przepisu):',
+                'prompt_required_type' => '🎯 WYMAGANY TYP:',
+                'prompt_required_type_rule' => 'Przepis MUSI być: {hint}. Użyj zgodnych składników jako bazy.',
+                'prompt_done_today' => 'DZIŚ JUŻ ZROBIONO: {list} — zaproponuj COŚ INNEGO.',
+                'prompt_last_7d' => 'OSTATNIE 7 DNI: {list} — urozmaicaj.',
+                'prompt_regen' => '🔁 GENEROWANIE OD NOWA #{n}: zaproponuj COŚ ZUPEŁNIE INNEGO (inny styl, inny główny składnik, inna technika).',
+                'prompt_regen_avoid' => 'Unikaj jako głównego składnika: {list}.',
+                'prompt_frozen_rule' => 'Składniki oznaczone [❄️ FROZEN]: są zamrożone. W krokach wyraźnie opisz, jak ich użyć (mrożone warzywa/dania gotowe: prosto z zamrażarki na gorący garnek/patelnię, bez rozmrażania; duże kawałki mięsa/ryb: w razie potrzeby rozmroź w lodówce). Dodaj 2–5 min czasu gotowania w porównaniu ze świeżymi. NIE traktuj ich jak świeżych produktów z lodówki.',
+                'prompt_coerenza' => 'SPÓJNOŚĆ KROKÓW↔SKŁADNIKÓW: każdy produkt spożywczy wymieniony w `steps` MUSI znajdować się w `ingredients` LUB być dokładnie wodą/solą/pieprzem/olejem albo szczyptą ziół. ZABRONIONE jest wpisywanie masła/śmietany/jajek/mleka/jogurtu/sera itp. w krokach, jeśli tego produktu nie ma w SPIŻARNI, a więc i w `ingredients`. Jeśli potrzebujesz masła, a go nie ma w spiżarni, zmień technikę (olej lub inny przepis).',
+                'prompt_user_prefs' => 'PREFERENCJE UŻYTKOWNIKA:',
+                'prompt_respond_json' => 'Odpowiedz WYŁĄCZNIE poprawnym JSON-em (bez markdown):',
             ],
         ];
         $text = $dict[$lang][$key] ?? $dict['en'][$key] ?? $dict['it'][$key] ?? $key;
@@ -14040,12 +14038,7 @@ function recipeScrubUnavailableMentionsInSteps(array &$recipe, array $removed): 
 
 /** Merge removed ingredients into recipe shopping_suggestions (deduped by name). */
 function recipeAttachShoppingSuggestions(array &$recipe, array $removed): void {
-    // ALWAYS, whatever `recipe_shopping_mode` says: this list is not a shopping preference,
-    // it is the record of what the pantry could not give. With shopping off the rows were
-    // dropped here too, so a recipe that lost its main ingredient looked 100% complete — and
-    // the screensaver kept proposing a «pizza margherita» whose pizza had been silently
-    // deleted by the pantry filter (the household opened it and the ingredient was gone).
-    if (empty($removed)) {
+    if (recipeShoppingMode() === 'off' || empty($removed)) {
         return;
     }
     $existing = [];
@@ -14210,17 +14203,6 @@ function recipePostProcessGenerated(PDO $db, array &$recipe, array $pantryItems)
         recipeApplyStockHintsToRecipe($db, $recipe);
         $removed = recipeEnforcePantryOnly($recipe);
         recipeAttachShoppingSuggestions($recipe, $removed);
-        if (!empty($removed)) {
-            // The scrub is a FACT about the dish, and it is the only trace left once the
-            // ingredient has been deleted: log it so «it proposed a dish I cannot cook» has
-            // evidence beyond the client's own verdict.
-            EverLog::info('recipe ingredients scrubbed', [
-                'event'   => 'recipe_ingredients_scrubbed',
-                'title'   => (string)($recipe['title'] ?? ''),
-                'removed' => count($removed),
-                'names'   => array_slice(array_values(array_column($removed, 'name')), 0, 8),
-            ]);
-        }
     }
     // Always scrub steps: removed pantry items + invented staples (e.g. burro in steps only)
     recipeScrubUnavailableMentionsInSteps($recipe, $removed);
@@ -22202,8 +22184,22 @@ function bringSuggestItems(PDO $db): void {
             11 => '十一月：柿子、石榴、卷心菜、西兰花和晚季菊苣。',
             12 => '十二月：橙子、柑橘、柿子、卷心菜和花椰菜。',
         ],
+        'pl' => [
+            1  => 'Styczeń: w sezonie są pomarańcze, mandarynki, kiwi, karczochy i kapusta.',
+            2  => 'Luty: cykoria, koper włoski, gruszki i cytrusy — nie przegap.',
+            3  => 'Marzec: szparagi już są! Świetnie pasują do świeżego groszku i szpinaku.',
+            4  => 'Kwiecień: sezon na szparagi, karczochy, bób i truskawki.',
+            5  => 'Maj: cukinia, truskawki, czereśnie — świetny miesiąc na świeże warzywa i owoce.',
+            6  => 'Czerwiec: morele, brzoskwinie, świeże pomidory, bakłażan — nadchodzi lato.',
+            7  => 'Lipiec: arbuz, brzoskwinie, bakłażan i pomidory w najlepszej formie.',
+            8  => 'Sierpień: w sezonie śliwki, figi, papryka i świeża bazylia.',
+            9  => 'Wrzesień: winogrona, figi, borowiki, granaty i jeżyny.',
+            10 => 'Październik: granaty, kasztany, grzyby, jabłka i jesienne gruszki.',
+            11 => 'Listopad: persymony, granaty, kapusty, brokuły i późna cykoria.',
+            12 => 'Grudzień: pomarańcze, mandarynki, persymony, kapusty i kalafiory.',
+        ],
     ];
-    $tipLang = in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh'], true) ? $lang : 'en';
+    $tipLang = in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh', 'pl'], true) ? $lang : 'en';
     $monthTips = $monthTipsAll[$tipLang];
     $seasonalTip = $monthTips[(int)date('n')] ?? '';
 
@@ -22232,13 +22228,14 @@ function bringSuggestItems(PDO $db): void {
                 'fr' => [1=>'Janvier',2=>'Février',3=>'Mars',4=>'Avril',5=>'Mai',6=>'Juin',7=>'Juillet',8=>'Août',9=>'Septembre',10=>'Octobre',11=>'Novembre',12=>'Décembre'],
                 'es' => [1=>'Enero',2=>'Febrero',3=>'Marzo',4=>'Abril',5=>'Mayo',6=>'Junio',7=>'Julio',8=>'Agosto',9=>'Septiembre',10=>'Octubre',11=>'Noviembre',12=>'Diciembre'],
                 'zh' => [1=>'一月',2=>'二月',3=>'三月',4=>'四月',5=>'五月',6=>'六月',7=>'七月',8=>'八月',9=>'九月',10=>'十月',11=>'十一月',12=>'十二月'],
+                'pl' => [1=>'Styczeń',2=>'Luty',3=>'Marzec',4=>'Kwiecień',5=>'Maj',6=>'Czerwiec',7=>'Lipiec',8=>'Sierpień',9=>'Wrzesień',10=>'Październik',11=>'Listopad',12=>'Grudzień'],
             ];
             $monthName = ($monthNames[$tipLang] ?? $monthNames['en'])[(int)date('n')];
             $inStockJson  = json_encode(array_values(array_slice($inStockNames, 0, 40)), JSON_UNESCAPED_UNICODE);
             $alreadyJson  = json_encode(array_values($knownNames), JSON_UNESCAPED_UNICODE);
             $dietaryLine  = $dietary ? "- Dietary preferences: {$dietary}" : '';
 
-            $langAdj = ['it'=>'Italian','en'=>'English','de'=>'German','fr'=>'French','es'=>'Spanish','zh'=>'Chinese'][$tipLang] ?? 'English';
+            $langAdj = ['it'=>'Italian','en'=>'English','de'=>'German','fr'=>'French','es'=>'Spanish','zh'=>'Chinese','pl'=>'Polish'][$tipLang] ?? 'English';
             $prompt = "You are a helpful {$langAdj} household shopping assistant.\n"
                 . "Today is {$monthName} " . date('Y') . ".\n"
                 . "The user already has these products in stock: {$inStockJson}\n"
@@ -23752,12 +23749,8 @@ function reportError(): void {
     // wall's own reports and its WebView's `[CAM]`/`[SHELFY]` lines belong in ONE place, filed by
     // level, so nobody has to cross two files to rebuild a timeline again.
     if (_clientLogWanted($level)) {
-        // One river per native surface: `kiosk` for the wall, `health` for the Health
-        // Bridge APK, `app` for phones/tablets/desktops. The source is declared by the
-        // client because an Android WebView claims to be a phone in its User-Agent.
-        $logSource = $source === 'kiosk' ? 'kiosk' : ($source === 'health_bridge' ? 'health' : 'app');
         _clientLogWrite(
-            $logSource,
+            $source === 'kiosk' ? 'kiosk' : 'app',
             $level,
             ["$type: $message" . ($pageUrl ? " | url=$pageUrl" : '')],
             $source

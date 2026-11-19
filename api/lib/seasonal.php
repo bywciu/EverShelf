@@ -28,7 +28,7 @@ function seasonalProducePath(?string $lang = null): string {
 function seasonalMissingLocales(): array {
     $dir = dirname(__DIR__) . '/../data/';
     $missing = [];
-    foreach (['it', 'en', 'de', 'fr', 'es', 'zh'] as $lang) {
+    foreach (['it', 'en', 'de', 'fr', 'es', 'zh', 'pl'] as $lang) {
         if (!is_readable($dir . 'seasonal_produce_' . $lang . '.json')) {
             $missing[] = $lang;
         }

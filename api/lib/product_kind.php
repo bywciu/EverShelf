@@ -1337,7 +1337,7 @@ function productKindPrefixEnabled(): bool {
 /** Normalize a UI language to one of the six shipped locales (fallback: English). */
 function productKindNormalizeLang($lang): string {
     $lang = strtolower(substr(trim((string)$lang), 0, 2));
-    return in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh'], true) ? $lang : 'en';
+    return in_array($lang, ['it', 'en', 'de', 'fr', 'es', 'zh', 'pl'], true) ? $lang : 'en';
 }
 
 /**

@@ -282,7 +282,7 @@ keeps working unchanged.
 | Enable notifications | `NOTIFY_ENABLED` | Master switch for the two channels below only |
 | Events | `NOTIFY_EVENTS` | `expiry_alert`, `shopping_add`, `stock_update` |
 | Daily expiry pass | `EXPIRY_ALERT_HOUR` | Hour (`0`–`23`, server local time) of the once-a-day expiry check; empty = first cron pass after midnight |
-| Message language | `NOTIFY_LANGUAGE` | `it`/`en`/`de`/`fr`/`es`/`zh`; empty → English |
+| Message language | `NOTIFY_LANGUAGE` | `it`/`en`/`de`/`fr`/`es`/`zh`/`pl`; empty → English |
 | ntfy server | `NTFY_URL` | `https://ntfy.sh` or your self-hosted instance |
 | ntfy topic | `NTFY_TOPIC` | Letters, digits, `-`, `_` (max 64); the 🎲 button generates one |
 | ntfy token | `NTFY_TOKEN` | Only for servers that require `Authorization: Bearer` |
@@ -449,7 +449,7 @@ What it does:
   request from `api/lib/demo_seed.json` (30 products, a month of history, a shopping
   list) and rebuilt once a day so the expiry dates are always relative to today. The
   household's `data/evershelf.db` is never opened in demo mode.
-- **Language.** English by default; `?lang=it|en|de|fr|es|zh` opens the demo in that
+- **Language.** English by default; `?lang=it|en|de|fr|es|zh|pl` opens the demo in that
   language, and the demo database of that language is used — product names included.
   The marketing site passes it on the iframe URL.
 - **Read-only.** Every write answers `{"success":true,"demo_mode":true}` without

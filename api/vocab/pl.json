@@ -1,0 +1,1919 @@
+{
+  "lang": "pl",
+  "fold": {
+    "à": "a",
+    "á": "a",
+    "â": "a",
+    "ä": "a",
+    "ã": "a",
+    "å": "a",
+    "è": "e",
+    "é": "e",
+    "ê": "e",
+    "ë": "e",
+    "ì": "i",
+    "í": "i",
+    "î": "i",
+    "ï": "i",
+    "ò": "o",
+    "ó": "o",
+    "ô": "o",
+    "ö": "o",
+    "õ": "o",
+    "ù": "u",
+    "ú": "u",
+    "û": "u",
+    "ü": "u",
+    "ç": "c",
+    "ñ": "n",
+    "ß": "ss",
+    "œ": "oe",
+    "æ": "ae",
+    "ą": "a",
+    "ć": "c",
+    "ę": "e",
+    "ł": "l",
+    "ń": "n",
+    "ś": "s",
+    "ź": "z",
+    "ż": "z"
+  },
+  "word_separators": " \t\n\r.,;:!?()[]{}\"'«»…/\\-–—_+*&%#@|",
+  "plural_pairs": [
+    [
+      "y",
+      ""
+    ],
+    [
+      "i",
+      ""
+    ],
+    [
+      "e",
+      ""
+    ],
+    [
+      "y",
+      "a"
+    ],
+    [
+      "i",
+      "a"
+    ],
+    [
+      "e",
+      "a"
+    ],
+    [
+      "ki",
+      "ka"
+    ],
+    [
+      "owie",
+      ""
+    ],
+    [
+      "ów",
+      ""
+    ]
+  ],
+  "pack_size_units": [
+    "g",
+    "gr",
+    "grammi",
+    "kg",
+    "ml",
+    "cl",
+    "l",
+    "lt",
+    "litri",
+    "oz"
+  ],
+  "stop_words": [
+    "z",
+    "ze",
+    "w",
+    "we",
+    "na",
+    "do",
+    "od",
+    "po",
+    "dla",
+    "i",
+    "oraz",
+    "bez",
+    "a",
+    "o",
+    "u",
+    "przy",
+    "nad",
+    "pod",
+    "typu",
+    "light",
+    "bio",
+    "eko",
+    "swieży",
+    "świeży",
+    "świeża",
+    "świeże",
+    "półtłusty",
+    "odtłuszczony",
+    "uht",
+    "ekologiczny",
+    "ekologiczne"
+  ],
+  "number_forms": [],
+  "agreement_forms": [],
+  "phrase_map": [],
+  "keyword_map": [],
+  "trailing_genre": [
+    "placek",
+    "placki",
+    "awokado",
+    "musli",
+    "granola",
+    "płatki",
+    "jogurt",
+    "jogurty",
+    "lody",
+    "semifreddo",
+    "mleko",
+    "pomidor",
+    "pomidory",
+    "pomidory koktajlowe",
+    "pomidory krojone",
+    "pomidory pelati"
+  ],
+  "ingredient_phrase_heads": [
+    "mąka",
+    "olej",
+    "sól",
+    "cukier",
+    "ocet",
+    "drożdże"
+  ],
+  "phrase_connectors": [
+    "z",
+    "ze",
+    "w",
+    "do",
+    "na",
+    "i"
+  ],
+  "shopping_container_heads": [
+    "owoce",
+    "warzywa",
+    "nabiał",
+    "przyprawy",
+    "napoje",
+    "mrożonki",
+    "przekąski",
+    "konserwy",
+    "mięso",
+    "ryby",
+    "zboża",
+    "śniadanie",
+    "mieszanka",
+    "mix"
+  ],
+  "umbrella_labels": [
+    "snacks & sweets",
+    "snack & dolci",
+    "snacks and sweets",
+    "snacks & süßwaren",
+    "cereals & legumes",
+    "cereali & legumi",
+    "cereals and legumes",
+    "getreide & hülsenfrüchte",
+    "vegetables",
+    "condiments",
+    "dairy",
+    "meat",
+    "fruit",
+    "fruits",
+    "gemüse",
+    "milchprodukte",
+    "fleisch",
+    "obst",
+    "fruits-based-foods",
+    "fruits based foods",
+    "plant-based-foods",
+    "plant-based-foods-and-beverages",
+    "sponge cake",
+    "farmaco",
+    "farmaci",
+    "medicine",
+    "medicines",
+    "medicinal",
+    "medicinale",
+    "medicinali",
+    "medikament",
+    "arzneimittel",
+    "médicament",
+    "médicaments",
+    "medicamento",
+    "medicamentos",
+    "药品",
+    "integratore alimentare",
+    "integratori alimentari",
+    "integratore",
+    "integratori",
+    "parafarmaco",
+    "parafarmaci",
+    "dispositivo medico",
+    "dispositivi medici",
+    "non alimentare",
+    "non-food",
+    "non food",
+    "nicht lebensmittel",
+    "non alimentaire",
+    "no alimentario",
+    "przekąski i słodycze",
+    "zboża i rośliny strączkowe",
+    "warzywa",
+    "przyprawy",
+    "nabiał",
+    "mięso",
+    "owoce",
+    "lek",
+    "leki",
+    "lekarstwa",
+    "suplement diety",
+    "suplementy diety",
+    "suplement",
+    "suplementy",
+    "wyrób medyczny",
+    "wyroby medyczne",
+    "nie żywność",
+    "produkty niespożywcze"
+  ],
+  "english_tab_labels": [
+    "vegetables",
+    "condiments",
+    "dairy",
+    "meat",
+    "fruit",
+    "fruits",
+    "snacks",
+    "cereals",
+    "legumes",
+    "beverages",
+    "bakery",
+    "seafood",
+    "fruitsbasedfoods",
+    "plantbasedfoods",
+    "spongecake"
+  ],
+  "synonyms": [],
+  "categories": [
+    {
+      "cat": "pasta",
+      "terms": [
+        "spaghetti",
+        "penne",
+        "fusilli",
+        "rigatoni",
+        "linguine",
+        "orecchiette",
+        "farfalle",
+        "makaron*",
+        "ryż",
+        "ryżu",
+        "basmati",
+        "arborio",
+        "carnaroli",
+        "gnocchi",
+        "kopytka",
+        "lasagne",
+        "tagliatelle",
+        "bucatini",
+        "vermicelli",
+        "kasza",
+        "kasze",
+        "kuskus",
+        "jęczmień",
+        "pęczak",
+        "orkisz",
+        "nitki",
+        "kokardki",
+        "świderki",
+        "muszelki",
+        "łazanki"
+      ]
+    },
+    {
+      "cat": "pane",
+      "terms": [
+        "chleb*",
+        "bułk*",
+        "bułeczk*",
+        "bagietk*",
+        "ciabatta",
+        "focaccia",
+        "tortill*",
+        "pita",
+        "grzank*",
+        "tost*",
+        "pieczywo",
+        "krakersy",
+        "paluszki",
+        "chrupki",
+        "sucharki",
+        "bułka tarta",
+        "tarta bułka",
+        "precel*",
+        "rogal*"
+      ]
+    },
+    {
+      "cat": "latticini",
+      "terms": [
+        "mleko",
+        "jogurt*",
+        "kefir",
+        "maślanka",
+        "ser",
+        "sery",
+        "serek",
+        "serki",
+        "twaróg",
+        "mozzarella",
+        "masło",
+        "śmietan*",
+        "śmietanka",
+        "ricott*",
+        "mascarpone",
+        "gorgonzola",
+        "parmezan",
+        "grana",
+        "jajka",
+        "jajko",
+        "jaja",
+        "burrata",
+        "scamorza",
+        "provolone",
+        "pecorino",
+        "feta",
+        "brie",
+        "camembert",
+        "emmental",
+        "gouda",
+        "edam",
+        "oscypek",
+        "skyr",
+        "kefir",
+        "labneh",
+        "philadelphia",
+        "twarożek",
+        "ser żółty",
+        "ser biały",
+        "ser topiony"
+      ]
+    },
+    {
+      "cat": "conserve",
+      "terms": [
+        "passata",
+        "pomidory w puszce",
+        "pomidory krojone",
+        "pelati",
+        "sos",
+        "sosy",
+        "przecier*",
+        "koncentrat*",
+        "dżem*",
+        "konfitur*",
+        "miód",
+        "miody",
+        "rośliny strączkowe",
+        "ciecierzyca",
+        "fasola",
+        "soczewica",
+        "groszek",
+        "oliwki",
+        "tuńczyk",
+        "makrela w puszce",
+        "wywar",
+        "bulion",
+        "kostka rosołowa",
+        "beszamel",
+        "zalew*",
+        "kiszon*",
+        "marynowan*"
+      ]
+    },
+    {
+      "cat": "condimenti",
+      "terms": [
+        "olej",
+        "oliwa",
+        "ocet",
+        "sól",
+        "pieprz",
+        "cukier",
+        "cukr*",
+        "mąka",
+        "mąki",
+        "majonez",
+        "keczup",
+        "musztarda",
+        "papryka mielona",
+        "curry",
+        "cynamon",
+        "gałka muszkatołowa",
+        "oregano",
+        "rozmaryn",
+        "tymianek",
+        "bazylia",
+        "natka pietruszki",
+        "kurkuma",
+        "kmin",
+        "kardamon",
+        "wanilia",
+        "drożdże",
+        "soda oczyszczona",
+        "proszek do pieczenia",
+        "skrobia",
+        "mąka ziemniaczana",
+        "kasza manna",
+        "pesto",
+        "tahini",
+        "miso",
+        "sos sojowy",
+        "sos worcester",
+        "tabasco",
+        "aromat",
+        "ekstrakt waniliowy",
+        "mąka kukurydziana",
+        "kakao",
+        "kakao*",
+        "puree",
+        "przyprawa",
+        "przyprawy",
+        "zioła",
+        "majeranek",
+        "lubczyk"
+      ]
+    },
+    {
+      "cat": "bevande",
+      "terms": [
+        "woda",
+        "piwo",
+        "wino",
+        "sok",
+        "soki",
+        "sok wyciskany",
+        "cola",
+        "coca cola",
+        "oranżada",
+        "fanta",
+        "sprite",
+        "pepsi",
+        "kawa",
+        "kawy",
+        "herbata",
+        "herbaty",
+        "herbatka",
+        "napar",
+        "rumianek",
+        "napój*",
+        "napoje",
+        "energy drink",
+        "lemoniada",
+        "mleko czekoladowe",
+        "kakao",
+        "ovomaltine",
+        "kompot",
+        "woda mineralna",
+        "woda gazowana",
+        "nektar"
+      ]
+    },
+    {
+      "cat": "carne",
+      "terms": [
+        "kurczak",
+        "kurczaka",
+        "indyk",
+        "wołowina",
+        "wieprzowina",
+        "cielęcina",
+        "szynka",
+        "kiełbas*",
+        "salami",
+        "mortadela",
+        "parówk*",
+        "boczek",
+        "bekon",
+        "kabanos*",
+        "polędwica",
+        "schab",
+        "karkówka",
+        "kotlet*",
+        "mięso",
+        "mięsa",
+        "mielone",
+        "mielona",
+        "pulpety",
+        "stek",
+        "jagnięcina",
+        "dzik",
+        "wędlin*",
+        "pasztet",
+        "kaszanka",
+        "słonina",
+        "żeberka",
+        "udko",
+        "udka",
+        "pierś z kurczaka",
+        "filet z kurczaka"
+      ]
+    },
+    {
+      "cat": "pesce",
+      "terms": [
+        "tuńczyk",
+        "łosoś",
+        "dorsz",
+        "ryba",
+        "ryby",
+        "makrela",
+        "śledź",
+        "śledzie",
+        "szproty",
+        "krewetki",
+        "anchois",
+        "sardynki",
+        "sardela",
+        "małże",
+        "kalmary",
+        "surimi",
+        "sandacz",
+        "pstrąg",
+        "karp",
+        "mintaj",
+        "morszczuk",
+        "ośmiornica",
+        "sepia",
+        "filet rybny",
+        "paluszki rybne"
+      ]
+    },
+    {
+      "cat": "frutta",
+      "terms": [
+        "jabłk*",
+        "gruszk*",
+        "banan*",
+        "pomarańcz*",
+        "mandarynk*",
+        "klementynk*",
+        "grejpfrut*",
+        "cytryn*",
+        "limonk*",
+        "kiwi",
+        "mango",
+        "ananas*",
+        "melon*",
+        "arbuz*",
+        "nektarynk*",
+        "morel*",
+        "brzoskwini*",
+        "śliwk*",
+        "figa",
+        "figi",
+        "granat*",
+        "papaja",
+        "marakuja",
+        "kokos*",
+        "daktyl*",
+        "malin*",
+        "jagod*",
+        "borówk*",
+        "porzeczk*",
+        "winogron*",
+        "truskawk*",
+        "czereśni*",
+        "wiśni*",
+        "owoc*",
+        "agrest",
+        "arbuz"
+      ]
+    },
+    {
+      "cat": "verdura",
+      "terms": [
+        "sałat*",
+        "cukini*",
+        "pomidor*",
+        "pomidorki*",
+        "cebul*",
+        "marchew*",
+        "marchewk*",
+        "szpinak",
+        "rukola",
+        "papryk*",
+        "bakłażan*",
+        "brokuł*",
+        "ziemniak*",
+        "ziemniaki",
+        "koper włoski",
+        "seler*",
+        "por",
+        "pory",
+        "szalotk*",
+        "kapust*",
+        "kalafior*",
+        "szparag*",
+        "pieczark*",
+        "grzyby",
+        "boczniak*",
+        "buraki",
+        "burak*",
+        "karczoch*",
+        "fasolk*",
+        "groszek zielony",
+        "kukurydz*",
+        "dyni*",
+        "czosnek",
+        "ogórek",
+        "ogórki",
+        "rzodkiewk*",
+        "rzepa",
+        "jarmuż",
+        "pak choi",
+        "kapusta pekińska",
+        "por",
+        "pietruszka",
+        "pasternak",
+        "brukselk*",
+        "botwin*"
+      ]
+    },
+    {
+      "cat": "surgelati",
+      "terms": [
+        "mrożon*",
+        "mrożonk*",
+        "findus",
+        "hortex",
+        "lody",
+        "lód",
+        "frytki",
+        "zupa warzywna mrożona",
+        "pierogi mrożone",
+        "warzywa na patelnię",
+        "mieszanka mrożona"
+      ]
+    },
+    {
+      "cat": "snack",
+      "terms": [
+        "ciastk*",
+        "herbatnik*",
+        "czekolad*",
+        "nutella",
+        "przekąsk*",
+        "chipsy",
+        "słodycze",
+        "cukierk*",
+        "wafel*",
+        "wafle",
+        "batonik*",
+        "baton*",
+        "ciasto",
+        "ciasta",
+        "babka",
+        "drożdżówk*",
+        "rogalik*",
+        "croissant",
+        "brioche",
+        "deser*",
+        "tiramisu",
+        "amaretti",
+        "praliny",
+        "migdały w cukrze",
+        "kruche ciastka",
+        "ciasto francuskie",
+        "paluszki",
+        "pączek",
+        "pączki",
+        "sernik",
+        "makowiec",
+        "kisiel",
+        "budyń",
+        "galaretk*",
+        "chałwa",
+        "orzeszki",
+        "orzechy",
+        "solone orzeszki",
+        "krakersy"
+      ]
+    },
+    {
+      "cat": "cereali",
+      "terms": [
+        "płatki",
+        "płatki owsiane",
+        "płatki kukurydziane",
+        "musli",
+        "granola",
+        "owsianka",
+        "owies",
+        "mieszanka zbożowa",
+        "quinoa",
+        "komosa ryżowa",
+        "kasza jaglana",
+        "płatki śniadaniowe",
+        "otręby",
+        "amarantus"
+      ]
+    },
+    {
+      "cat": "igiene",
+      "terms": [
+        "mydło",
+        "szampon",
+        "pasta do zębów",
+        "dezodorant",
+        "papier toaletowy",
+        "chusteczki",
+        "patyczki higieniczne",
+        "podpaski",
+        "maszynka do golenia",
+        "pianka do golenia",
+        "żel pod prysznic",
+        "odżywka",
+        "balsam",
+        "płyn do kąpieli",
+        "krem",
+        "ręczniki papierowe",
+        "szczoteczk*"
+      ]
+    },
+    {
+      "cat": "pulizia",
+      "terms": [
+        "detergent",
+        "płyn do mycia",
+        "płyn do naczyń",
+        "odtłuszczacz",
+        "wybielacz",
+        "płyn do płukania",
+        "odkamieniacz",
+        "proszek do prania",
+        "kapsułki do prania",
+        "pranie",
+        "naczynia",
+        "zmywarka",
+        "tabletki do zmywarki",
+        "środek czyszczący",
+        "gąbk*",
+        "worki na śmieci",
+        "płyn do podłóg"
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "cat": "snack",
+      "terms": [
+        "baiocchi",
+        "macine",
+        "tarallucci",
+        "tegolini",
+        "pavesini",
+        "plasmon",
+        "loacker",
+        "manner",
+        "digestive",
+        "oreo",
+        "hanuta",
+        "ringo",
+        "abbracci",
+        "gocciole",
+        "pan di stelle",
+        "oro saiwa",
+        "kinder",
+        "ferrero rocher",
+        "raffaello",
+        "bounty",
+        "twix",
+        "snickers",
+        "pringles",
+        "fonzies",
+        "tuc",
+        "ritz",
+        "mulino bianco",
+        "gran cereale",
+        "saiwa",
+        "togo",
+        "principe",
+        "oro ciok",
+        "kit kat",
+        "kitkat",
+        "prince polo",
+        "wawel",
+        "milka",
+        "wedel",
+        "e. wedel",
+        "solidarni",
+        "jutrzenka",
+        "delicje",
+        "jeżyki",
+        "krakuski",
+        "lajkonik",
+        "aksam",
+        "góralki",
+        "grześki",
+        "princessa",
+        "markizy",
+        "oreo",
+        "lay's",
+        "lays",
+        "crunchips",
+        "cheetos"
+      ]
+    },
+    {
+      "cat": "pasta",
+      "terms": [
+        "barilla",
+        "de cecco",
+        "garofalo",
+        "la molisana",
+        "rummo",
+        "voiello",
+        "divella",
+        "agnesi",
+        "buitoni",
+        "lubella",
+        "makarony polskie",
+        "malma",
+        "santa maria",
+        "pastella",
+        "vita"
+      ]
+    },
+    {
+      "cat": "latticini",
+      "terms": [
+        "galbani",
+        "granarolo",
+        "yomo",
+        "danone",
+        "muller",
+        "müller",
+        "president",
+        "président",
+        "santa lucia",
+        "jocca",
+        "fiorfiore",
+        "łaciate",
+        "mlekovita",
+        "piątnica",
+        "mlekpol",
+        "bakoma",
+        "zott",
+        "robico",
+        "hochland",
+        "mlekovita",
+        "gostyń",
+        "krasnystaw",
+        "sierpc",
+        "almette",
+        "president",
+        "turek",
+        "mazury",
+        "pilos",
+        "jogobella",
+        "fantasia",
+        "danio",
+        "activia"
+      ]
+    },
+    {
+      "cat": "conserve",
+      "terms": [
+        "mutti",
+        "cirio",
+        "pudliszki",
+        "kamis",
+        "winiary",
+        "heinz",
+        "łowicz",
+        "roleski",
+        "krakus",
+        "spółdzielnia",
+        "sokołów",
+        "profi",
+        "agros",
+        "develey",
+        "włocławek"
+      ]
+    },
+    {
+      "cat": "bevande",
+      "terms": [
+        "san pellegrino",
+        "levissima",
+        "ferrarelle",
+        "lete",
+        "nestea",
+        "lipton",
+        "nescafe",
+        "nescafé",
+        "lavazza",
+        "illy",
+        "kimbo",
+        "segafredo",
+        "żywiec zdrój",
+        "nałęczowianka",
+        "cisowianka",
+        "kubuś",
+        "tymbark",
+        "hortex",
+        "cappy",
+        "pepsi",
+        "coca cola",
+        "tyskie",
+        "żubr",
+        "lech",
+        "książęce",
+        "okocim",
+        "jacobs",
+        "tchibo",
+        "woseba",
+        "sir morris",
+        "saga",
+        "dilmah",
+        "irving",
+        "posti",
+        "mokate",
+        "herbapol",
+        "tarczyński"
+      ]
+    }
+  ],
+  "piece_produce": [
+    "awokado",
+    "banan*",
+    "jabłk*",
+    "gruszk*",
+    "pomarańcz*",
+    "mandarynk*",
+    "klementynk*",
+    "grejpfrut*",
+    "cytryn*",
+    "limonk*",
+    "kiwi",
+    "mango",
+    "ananas*",
+    "melon*",
+    "arbuz*",
+    "nektarynk*",
+    "morel*",
+    "brzoskwini*",
+    "śliwk*",
+    "figa",
+    "figi",
+    "granat*",
+    "papaja",
+    "kokos*",
+    "daktyl*",
+    "cebul*",
+    "czosnek",
+    "ziemniak*",
+    "cukini*",
+    "bakłażan*",
+    "papryk*",
+    "marchew*",
+    "marchewk*",
+    "koper włoski",
+    "seler*",
+    "por",
+    "sałat*",
+    "kalafior*",
+    "kapust*",
+    "karczoch*",
+    "szparag*",
+    "ogórek",
+    "ogórki",
+    "dyni*",
+    "burak*",
+    "pomidor*",
+    "pomidorki*",
+    "rukola",
+    "szpinak",
+    "brokuł*",
+    "fasolk*",
+    "groszek*"
+  ],
+  "classic_piece_defaults": [
+    "awokado",
+    "banan*",
+    "jabłk*",
+    "gruszk*",
+    "pomarańcz*",
+    "mandarynk*",
+    "klementynk*",
+    "cytryn*",
+    "limonk*",
+    "kiwi",
+    "mango",
+    "cebul*",
+    "czosnek",
+    "papryk*",
+    "pomidor*",
+    "jajka",
+    "jaja"
+  ],
+  "produce_preparations": [
+    "na kilogram",
+    "krojon*",
+    "plastr*",
+    "pęczek",
+    "listek",
+    "luzem",
+    "mielon*",
+    "tart*",
+    "obran*",
+    "przecier*",
+    "sos",
+    "koncentrat*",
+    "miąższ",
+    "suszon*",
+    "kiszon*",
+    "marynowan*",
+    "w oleju",
+    "w zalewie"
+  ],
+  "processed": [
+    "dżem*",
+    "marmolad*",
+    "jogurt",
+    "sok",
+    "soki",
+    "nektar",
+    "lody",
+    "śmietan*",
+    "ciasto",
+    "ciastk*",
+    "herbatnik*",
+    "sos",
+    "przecier*",
+    "obran*",
+    "miąższ",
+    "koncentrat*",
+    "marynowan*",
+    "kiszon*",
+    "w oleju",
+    "syrop*",
+    "suszon*",
+    "kandyzowan*",
+    "przekąsk*",
+    "baton*",
+    "budyń",
+    "mus",
+    "napój",
+    "napoje",
+    "kisiel",
+    "galaretk*"
+  ],
+  "recipe_weak_tokens": [
+    "ryż",
+    "makaron",
+    "chleb",
+    "mleko",
+    "olej",
+    "wino",
+    "ocet",
+    "sól",
+    "pieprz",
+    "woda",
+    "jajka",
+    "jajko",
+    "jaja",
+    "mięso",
+    "ryba",
+    "kurczak",
+    "ser",
+    "jogurt",
+    "miód",
+    "mąka",
+    "cukier",
+    "ciastka",
+    "sok",
+    "sos",
+    "śmietana",
+    "śmietanka",
+    "masło",
+    "szynka",
+    "salami",
+    "tuńczyk",
+    "kukurydza",
+    "groszek",
+    "fasola",
+    "soczewica",
+    "ziemniaki",
+    "ziemniak",
+    "jabłko",
+    "jabłka",
+    "banan",
+    "sałata",
+    "pomidor",
+    "pomidory",
+    "cebula",
+    "czosnek",
+    "cukinia",
+    "marchew",
+    "marchewka",
+    "pełnoziarnisty",
+    "klasyczny",
+    "świeży",
+    "świeża",
+    "świeże",
+    "słodki",
+    "biały",
+    "czerwony",
+    "czerwona",
+    "duży",
+    "duża",
+    "wielki"
+  ],
+  "prepared_salad": {
+    "phrases": [
+      [
+        "sałatka",
+        "z",
+        "ryżu"
+      ],
+      [
+        "sałatka",
+        "z",
+        "makaronu"
+      ],
+      [
+        "sałatka",
+        "z",
+        "kaszy"
+      ],
+      [
+        "sałatka",
+        "z",
+        "kuskusu"
+      ],
+      [
+        "sałatka",
+        "z",
+        "komosy"
+      ],
+      [
+        "sałatka",
+        "z",
+        "bulguru"
+      ],
+      [
+        "sałatka",
+        "z",
+        "ciecierzycy"
+      ],
+      [
+        "sałatka",
+        "z",
+        "fasoli"
+      ],
+      [
+        "sałatka",
+        "jarzynowa"
+      ],
+      [
+        "sałatka",
+        "makaronowa"
+      ],
+      [
+        "sałatka",
+        "ryżowa"
+      ]
+    ],
+    "requires": [
+      [
+        "ryż",
+        "sałatka"
+      ],
+      [
+        "makaron",
+        "sałatka"
+      ]
+    ],
+    "brands": [
+      "ponti",
+      "rio mare",
+      "orogel",
+      "findus",
+      "star",
+      "winiary",
+      "sokołów",
+      "kielecka"
+    ]
+  },
+  "translated_from": "en",
+  "translated_with": "ai:claude",
+  "company_stop_words": [
+    "laboratories",
+    "laboratory",
+    "pharmaceutical",
+    "pharmaceuticals",
+    "pharma",
+    "industries",
+    "industry",
+    "company",
+    "co",
+    "holdings",
+    "holding",
+    "group",
+    "plc",
+    "ltd",
+    "limited",
+    "inc",
+    "incorporated",
+    "llc",
+    "corp",
+    "corporation",
+    "gmbh",
+    "ag",
+    "healthcare",
+    "health",
+    "spółka",
+    "sp",
+    "zoo",
+    "sa",
+    "s.a.",
+    "z o.o.",
+    "laboratoria",
+    "laboratorium",
+    "farmaceutyczne",
+    "farmaceutyczna",
+    "przemysł"
+  ],
+  "cooking_voice": {
+    "next": [
+      "dalej",
+      "następny",
+      "następne",
+      "naprzód",
+      "kontynuuj"
+    ],
+    "prev": [
+      "wstecz",
+      "poprzedni",
+      "poprzednie",
+      "cofnij",
+      "z powrotem"
+    ],
+    "replay": [
+      "przeczytaj jeszcze raz",
+      "powtórz",
+      "jeszcze raz",
+      "powiedz jeszcze raz"
+    ]
+  },
+  "capture": {
+    "intent": {
+      "recipe": [
+        "co mogę ugotować",
+        "co mogę zrobić",
+        "co ugotować",
+        "co zrobić z",
+        "co mam ugotować",
+        "co na obiad",
+        "przepis",
+        "przepisy",
+        "ugotować",
+        "gotowanie",
+        "zrobić z"
+      ],
+      "throw": [
+        "wyrzuć",
+        "wyrzuciłem",
+        "wyrzuciłam",
+        "wyrzucić",
+        "wyrzucam",
+        "do kosza",
+        "zepsuło się",
+        "zepsuł się",
+        "zepsuła się",
+        "wylałem",
+        "wylałam",
+        "pozbyłem się",
+        "pozbyłam się"
+      ],
+      "consume": [
+        "zużyłem",
+        "zużyłam",
+        "zużyć",
+        "zużywam",
+        "zjadłem",
+        "zjadłam",
+        "zjeść",
+        "zjadam",
+        "wypiłem",
+        "wypiłam",
+        "wypić",
+        "piję",
+        "jem",
+        "użyłem",
+        "użyłam",
+        "użyć",
+        "biorę",
+        "wziąłem",
+        "wzięłam",
+        "skończyłem",
+        "skończyłam",
+        "skończył się",
+        "skończyła się",
+        "skończyło się",
+        "skończyły się",
+        "opróżniłem",
+        "opróżniłam",
+        "spróbowałem",
+        "spróbowałam",
+        "zużyto",
+        "zjedzone",
+        "wypite",
+        "połknąłem",
+        "połknęłam",
+        "skonsumowałem",
+        "skonsumowałam"
+      ],
+      "shop": [
+        "lista zakupów",
+        "na listę zakupów",
+        "do listy zakupów",
+        "na listę",
+        "do listy",
+        "zakupy",
+        "do kupienia",
+        "do kupna"
+      ],
+      "add": [
+        "dodaj",
+        "dodałem",
+        "dodałam",
+        "dodać",
+        "kup",
+        "kupiłem",
+        "kupiłam",
+        "kupić",
+        "kupuję",
+        "włóż",
+        "włożyłem",
+        "włożyłam",
+        "uzupełnij",
+        "uzupełniłem",
+        "uzupełniłam",
+        "schowaj",
+        "schowałem",
+        "schowałam",
+        "przyniosłem",
+        "przyniosłam"
+      ],
+      "symptom": [
+        "ból głowy",
+        "boli mnie głowa",
+        "głowa mnie boli",
+        "ból gardła",
+        "boli mnie gardło",
+        "ból brzucha",
+        "boli mnie brzuch",
+        "brzuch mnie boli",
+        "ból pleców",
+        "boli mnie kręgosłup",
+        "mam gorączkę",
+        "gorączka",
+        "kaszel",
+        "katar",
+        "przeziębienie",
+        "grypa",
+        "alergia",
+        "nudności",
+        "biegunka",
+        "zaparcie",
+        "zgaga",
+        "co mam na",
+        "co mam na ból",
+        "coś na",
+        "na kaszel",
+        "na gorączkę",
+        "objaw",
+        "objawy",
+        "apteczka",
+        "apteka",
+        "lek",
+        "leki",
+        "lekarstwo",
+        "lekarstwa",
+        "jaki lek na",
+        "który lek na"
+      ]
+    },
+    "numbers": {
+      "jeden": 1,
+      "jedna": 1,
+      "jedno": 1,
+      "jednego": 1,
+      "jedną": 1,
+      "jednej": 1,
+      "dwa": 2,
+      "dwie": 2,
+      "dwóch": 2,
+      "dwoje": 2,
+      "trzy": 3,
+      "trzech": 3,
+      "cztery": 4,
+      "czterech": 4,
+      "pięć": 5,
+      "pięciu": 5,
+      "sześć": 6,
+      "sześciu": 6,
+      "siedem": 7,
+      "siedmiu": 7,
+      "osiem": 8,
+      "ośmiu": 8,
+      "dziewięć": 9,
+      "dziewięciu": 9,
+      "dziesięć": 10,
+      "dziesięciu": 10,
+      "jedenaście": 11,
+      "dwanaście": 12
+    },
+    "units": {
+      "g": [
+        "g",
+        1
+      ],
+      "gr": [
+        "g",
+        1
+      ],
+      "gram": [
+        "g",
+        1
+      ],
+      "gramy": [
+        "g",
+        1
+      ],
+      "gramów": [
+        "g",
+        1
+      ],
+      "grama": [
+        "g",
+        1
+      ],
+      "gramu": [
+        "g",
+        1
+      ],
+      "dag": [
+        "g",
+        10
+      ],
+      "dkg": [
+        "g",
+        10
+      ],
+      "dekagram": [
+        "g",
+        10
+      ],
+      "dekagramy": [
+        "g",
+        10
+      ],
+      "dekagramów": [
+        "g",
+        10
+      ],
+      "kg": [
+        "kg",
+        1
+      ],
+      "kilo": [
+        "kg",
+        1
+      ],
+      "kilogram": [
+        "kg",
+        1
+      ],
+      "kilogramy": [
+        "kg",
+        1
+      ],
+      "kilograma": [
+        "kg",
+        1
+      ],
+      "kilogramów": [
+        "kg",
+        1
+      ],
+      "ml": [
+        "ml",
+        1
+      ],
+      "mililitr": [
+        "ml",
+        1
+      ],
+      "mililitry": [
+        "ml",
+        1
+      ],
+      "mililitrów": [
+        "ml",
+        1
+      ],
+      "cl": [
+        "cl",
+        1
+      ],
+      "centylitr": [
+        "cl",
+        1
+      ],
+      "centylitry": [
+        "cl",
+        1
+      ],
+      "centylitrów": [
+        "cl",
+        1
+      ],
+      "dl": [
+        "dl",
+        1
+      ],
+      "decylitr": [
+        "dl",
+        1
+      ],
+      "decylitry": [
+        "dl",
+        1
+      ],
+      "decylitrów": [
+        "dl",
+        1
+      ],
+      "l": [
+        "l",
+        1
+      ],
+      "litr": [
+        "l",
+        1
+      ],
+      "litry": [
+        "l",
+        1
+      ],
+      "litrów": [
+        "l",
+        1
+      ],
+      "litra": [
+        "l",
+        1
+      ],
+      "oz": [
+        "g",
+        28.35
+      ],
+      "uncja": [
+        "g",
+        28.35
+      ],
+      "uncje": [
+        "g",
+        28.35
+      ],
+      "uncji": [
+        "g",
+        28.35
+      ],
+      "lb": [
+        "g",
+        453.59
+      ],
+      "lbs": [
+        "g",
+        453.59
+      ],
+      "funt": [
+        "g",
+        453.59
+      ],
+      "funty": [
+        "g",
+        453.59
+      ],
+      "funtów": [
+        "g",
+        453.59
+      ],
+      "szt": [
+        "pz",
+        1
+      ],
+      "szt.": [
+        "pz",
+        1
+      ],
+      "sztuka": [
+        "pz",
+        1
+      ],
+      "sztuki": [
+        "pz",
+        1
+      ],
+      "sztuk": [
+        "pz",
+        1
+      ],
+      "sztukę": [
+        "pz",
+        1
+      ],
+      "kawałek": [
+        "pz",
+        1
+      ],
+      "kawałki": [
+        "pz",
+        1
+      ],
+      "kawałków": [
+        "pz",
+        1
+      ],
+      "kawałka": [
+        "pz",
+        1
+      ],
+      "plasterek": [
+        "pz",
+        1
+      ],
+      "plasterki": [
+        "pz",
+        1
+      ],
+      "plasterków": [
+        "pz",
+        1
+      ],
+      "plaster": [
+        "pz",
+        1
+      ],
+      "plastry": [
+        "pz",
+        1
+      ],
+      "pz": [
+        "pz",
+        1
+      ],
+      "pc": [
+        "pz",
+        1
+      ],
+      "pcs": [
+        "pz",
+        1
+      ],
+      "opakowanie": [
+        "conf",
+        1
+      ],
+      "opakowania": [
+        "conf",
+        1
+      ],
+      "opakowań": [
+        "conf",
+        1
+      ],
+      "opak": [
+        "conf",
+        1
+      ],
+      "opak.": [
+        "conf",
+        1
+      ],
+      "paczka": [
+        "conf",
+        1
+      ],
+      "paczki": [
+        "conf",
+        1
+      ],
+      "paczek": [
+        "conf",
+        1
+      ],
+      "paczkę": [
+        "conf",
+        1
+      ],
+      "pudełko": [
+        "conf",
+        1
+      ],
+      "pudełka": [
+        "conf",
+        1
+      ],
+      "pudełek": [
+        "conf",
+        1
+      ],
+      "butelka": [
+        "conf",
+        1
+      ],
+      "butelki": [
+        "conf",
+        1
+      ],
+      "butelek": [
+        "conf",
+        1
+      ],
+      "butelkę": [
+        "conf",
+        1
+      ],
+      "słoik": [
+        "conf",
+        1
+      ],
+      "słoiki": [
+        "conf",
+        1
+      ],
+      "słoików": [
+        "conf",
+        1
+      ],
+      "słoika": [
+        "conf",
+        1
+      ],
+      "puszka": [
+        "conf",
+        1
+      ],
+      "puszki": [
+        "conf",
+        1
+      ],
+      "puszek": [
+        "conf",
+        1
+      ],
+      "puszkę": [
+        "conf",
+        1
+      ],
+      "karton": [
+        "conf",
+        1
+      ],
+      "kartony": [
+        "conf",
+        1
+      ],
+      "kartonów": [
+        "conf",
+        1
+      ],
+      "torebka": [
+        "conf",
+        1
+      ],
+      "torebki": [
+        "conf",
+        1
+      ],
+      "torebek": [
+        "conf",
+        1
+      ],
+      "conf": [
+        "conf",
+        1
+      ]
+    },
+    "fractions": [
+      [
+        "trzy czwarte",
+        0.75
+      ],
+      [
+        "trzy czwartych",
+        0.75
+      ],
+      [
+        "jedna czwarta",
+        0.25
+      ],
+      [
+        "ćwierć",
+        0.25
+      ],
+      [
+        "pół",
+        0.5
+      ],
+      [
+        "połowa",
+        0.5
+      ],
+      [
+        "połowę",
+        0.5
+      ],
+      [
+        "połówka",
+        0.5
+      ],
+      [
+        "połówkę",
+        0.5
+      ]
+    ],
+    "all_words": [
+      "wszystko",
+      "wszystkie",
+      "wszystkiego",
+      "cały",
+      "całą",
+      "całe",
+      "całego",
+      "całość",
+      "do końca",
+      "skończone",
+      "puste",
+      "pusty",
+      "pusta",
+      "opróżnione",
+      "zużyte"
+    ],
+    "stop_words": [
+      "a",
+      "i",
+      "o",
+      "z",
+      "ze",
+      "w",
+      "we",
+      "na",
+      "do",
+      "od",
+      "po",
+      "dla",
+      "mi",
+      "mnie",
+      "moje",
+      "mój",
+      "moja",
+      "to",
+      "ten",
+      "ta",
+      "te",
+      "tych",
+      "oraz",
+      "lub",
+      "albo",
+      "potem",
+      "jakieś",
+      "trochę",
+      "proszę",
+      "że",
+      "się"
+    ]
+  },
+  "locale": {
+    "name": "Polski",
+    "collation": "pl-PL",
+    "speech_tag": "pl-PL"
+  }
+}

@@ -272,6 +272,7 @@ function weatherFuelPromptBlock(?array $weather, string $lang = 'en'): string {
         'fr' => ['apparent' => 'ressentie', 'header' => 'MÉTÉO LOCALE (Open-Meteo) — obligatoire pour « Mon rythme » :', 'zone' => 'Zone', 'conditions' => 'Conditions', 'adapt' => 'Adapter style et cuisson', 'cite' => 'Dans `fuel_why` mentionner brièvement comment la météo a influencé le choix (1 phrase).'],
         'es' => ['apparent' => 'sensación', 'header' => 'CLIMA LOCAL (Open-Meteo) — obligatorio para «Mi ritmo»:', 'zone' => 'Zona', 'conditions' => 'Condiciones', 'adapt' => 'Adaptar estilo y cocción', 'cite' => 'En `fuel_why` mencionar brevemente cómo el clima influyó en la elección (1 frase).'],
         'zh' => ['apparent' => '体感', 'header' => '本地天气（Open-Meteo）— "我的节奏" 必填：', 'zone' => '区域', 'conditions' => '天气状况', 'adapt' => '调整风格和烹饪方式', 'cite' => '在 `fuel_why` 中简要提及天气如何影响了你的选择（1句话）。'],
+        'pl' => ['apparent' => 'odczuwalna', 'header' => 'LOKALNA POGODA (Open-Meteo) — obowiązkowo dla "Moje tempo":', 'zone' => 'Okolica', 'conditions' => 'Warunki', 'adapt' => 'Dostosuj styl i sposób gotowania', 'cite' => 'W `fuel_why` krótko wspomnij, jak pogoda wpłynęła na Twój wybór (1 zdanie).'],
     ];
     $wp = $weatherPrompt[$lang] ?? $weatherPrompt['en'];
     $appTxt = $app !== null ? " ({$wp['apparent']} {$app}°C)" : '';

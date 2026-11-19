@@ -30,7 +30,7 @@ runtime/binary files — if a task truly needs one, ask first.
 
 - **Language**: code, comments and docs in **English**. UI strings must never be
   hardcoded: `t('key')` in JS / `data-i18n="key"` in HTML, and the key must be
-  added to **all six** locales (it, en, de, fr, es, zh). Optional UI text coming
+  added to **all seven** locales (it, en, de, fr, es, zh, pl). Optional UI text coming
   from PHP returns a `hint_key` (+ `hint_args`) / `tip_key` / `reasons[]`, never a
   literal string.
 - **The state of the HOUSE lives on the SERVER, never in `localStorage`.** A phone, a
@@ -44,21 +44,6 @@ runtime/binary files — if a task truly needs one, ask first.
   `POST audit_state_save` / `audit_state_clear` and the TTL owned by the server).
   `localStorage` is allowed as an **offline mirror** (and for what is genuinely of that
   device: the chosen mode, a UI preference) — never as the truth.
-- **The Android Health Bridge (`evershelf-health-bridge/`) uploads only when EverShelf
-  ANSWERS.** Each day is stored in a local SQLite queue first, then every pass asks
-  `health_bridge_hello`: a phone in the street has internet and no route to the LAN server,
-  so an unreachable server is a **successful deferral** (the day waits on the phone), never a
-  retry storm. Its `report_error` travels with `source=health_bridge` → its own river
-  `data/logs/health-YYYY-MM-DD.log`, and with `version_guard_bypass=true` (that guard compares
-  against the webapp tag while the bridge has its own version line). OTA asks the LAN server
-  first (`health_bridge_update` + `releases/evershelf-health-bridge.apk`), GitHub second, and
-  installs only an APK with the **same signature** and a higher `versionCode` — the workflow
-  refuses to publish anything else (`Guard — the APK must update the published app in place`
-  compares `releases/health-bridge-version.json` and the published APK's v2 certificate), so an
-  update never asks for an uninstall. It ships the **same six locales as the webapp**
-  (`values/` + `values-it|de|fr|es|zh`, 244 strings each). Its keep-alive
-  foreground service is started **only from a visible screen** — Android 15 refuses a
-  `dataSync` FGS from `BOOT_COMPLETED`, which is what made the old APK "close by itself".
 - **A demo answers by DATA, and never asks.** `DEMO_MODE=true`, `?demo=1` or a `/demo`
   mount (`api/lib/demo.php`) serve `data/demo/evershelf-demo-<lang>.db`, seeded from
   `api/lib/demo_seed.json` and rebuilt once a day; `data/evershelf.db` is never opened.
@@ -723,16 +708,6 @@ runtime/binary files — if a task truly needs one, ask first.
   the link, so every «q.b.» or «80-90 g» ingredient was skipped in silence: with the sugar finished,
   «Maxi-Pancake al Forno» still read «✅ Hai tutti gli ingredienti» (measured: old rule
   `missing 0`, new `missing 1`).
-- **A recipe that lost an ingredient REMEMBERS it.** `recipeEnforcePantryOnly()` deletes every
-  ingredient the pantry cannot link, and `recipeAttachShoppingSuggestions()` records that list
-  **always** (a fact about the dish, not a shopping preference). `_recipeArchiveMissingInfo()`
-  counts those rows as missing (`scrubbed`), so `allInPantry` is false and the screensaver refuses
-  the dish — it used to propose a «pizza margherita» whose pizza had been deleted, and opening it
-  showed nothing missing. A suggestion bought since stops counting (`_recipePantryHasName()`: every
-  token on ONE live product name, so «Pizza alta regina» never covers «Pizza margherita»), the live
-  shelf uses `isInventoryDepleted()` (a trace is not stock), `mealieRecipePantryCoverage()` uses
-  `recipeScorePantryMatch()` — the matcher that actually links the ingredients — and the sheet
-  prints `recipes.missing_scrubbed`.
 - **Tablet/kiosk CSS is opt-in**: `assets/css/tablet.css` activates on `html.is-kiosk`
   / `html.is-touch-tablet` (set by `_markDeviceChrome()`), never on `min-width` alone —
   a desktop monitor keeps the base styles.

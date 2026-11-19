@@ -462,6 +462,7 @@ function computeMealBudget(PDO $db, string $meal = 'pranzo', array $options = []
         'fr' => ['equilibrio_limited' => 'Équilibre (données limitées)', 'no_health_data' => 'Pas de données santé récentes : budget estimé du profil. Entrez kcal/pas ou connectez Health Bridge.', 'ricarica' => 'Recharge post-activité', 'high_activity' => 'Activité élevée aujourd\'hui → repas plus énergétique et riche en protéines.', 'leggero' => 'Journée légère', 'low_activity' => 'Peu d\'activité → densité calorique modérée, plus de volume en légumes.'],
         'es' => ['equilibrio_limited' => 'Equilibrio (datos limitados)', 'no_health_data' => 'Sin datos de salud recientes: presupuesto estimado del perfil. Ingresa kcal/pasos o conecta Health Bridge.', 'ricarica' => 'Recarga post-actividad', 'high_activity' => 'Actividad elevada hoy → comida más energética y rica en proteínas.', 'leggero' => 'Día ligero', 'low_activity' => 'Poca actividad → densidad calórica moderada, más volumen de verduras.'],
         'zh' => ['equilibrio_limited' => '平衡（数据有限）', 'no_health_data' => '没有最新健康数据：根据个人资料估算预算。请输入 kcal/步数或连接 Health Bridge。', 'ricarica' => '活动后补充', 'high_activity' => '今天活动量大 → 更高能量和蛋白质的餐食。', 'leggero' => '轻食日', 'low_activity' => '活动量少 → 适度热量密度，多吃蔬菜增加体积。'],
+        'pl' => ['equilibrio_limited' => 'Równowaga (ograniczone dane)', 'no_health_data' => 'Brak świeżych danych zdrowotnych: budżet oszacowano na podstawie profilu. Wpisz kcal/kroki lub połącz Health Bridge.', 'ricarica' => 'Regeneracja po aktywności', 'high_activity' => 'Dziś duża aktywność → bardziej energetyczny posiłek bogaty w białko.', 'leggero' => 'Lekki dzień', 'low_activity' => 'Mała aktywność → umiarkowana kaloryczność, więcej warzyw.'],
     ];
     $hl = $healthLabels[$lang] ?? $healthLabels['en'];
 
@@ -685,6 +686,7 @@ function healthFuelPromptBlock(array $budget, string $lang = 'en'): string {
         'fr' => ['lose' => 'objectif profil : PERTE DE POIDS (déficit contrôlé, priorité protéines et volume légumes)', 'gain' => 'objectif profil : PRISE DE MASSE (léger surplus, protéines élevées, glucides suffisants)', 'maintain' => 'objectif profil : MAINTIEN (équilibre kcal/macros)'],
         'es' => ['lose' => 'objetivo perfil: PÉRDIDA DE PESO (déficit controlado, priorizar proteínas y volumen de verduras)', 'gain' => 'objetivo perfil: GANANCIA MUSCULAR (superávit ligero, proteínas altas, carbohidratos suficientes)', 'maintain' => 'objetivo perfil: MANTENIMIENTO (equilibrio kcal/macros)'],
         'zh' => ['lose' => '个人目标：减重（控制热量缺口，优先蛋白质和蔬菜体积）', 'gain' => '个人目标：增肌（轻微热量盈余，高蛋白，足够碳水）', 'maintain' => '个人目标：维持（kcal/营养素平衡）'],
+        'pl' => ['lose' => 'cel profilu: REDUKCJA MASY CIAŁA (kontrolowany deficyt, priorytet: białko i warzywa)', 'gain' => 'cel profilu: PRZYROST MASY MIĘŚNIOWEJ (niewielka nadwyżka, dużo białka, wystarczająco węglowodanów)', 'maintain' => 'cel profilu: UTRZYMANIE (równowaga kcal/makroskładników)'],
     ];
     $gl = $goalLines[$lang] ?? $goalLines['en'];
     $goalLine = match ($goal) {
@@ -759,6 +761,17 @@ function healthFuelPromptBlock(array $budget, string $lang = 'en'): string {
             'no_overload' => '不要超载：如果今天已经吃了很多，做一顿更轻的餐并平衡剩余的营养素。',
             'fuel_why' => '必填：`fuel_why` 字段（2-4 句，使用食谱语言）解释为什么选择这些食材。',
             'nutrition_note' => '在 nutrition_note 中写一句关于 kcal/营养素匹配的话。`nutrition` 中的值必须接近目标。',
+        ],
+        'pl' => [
+            'header' => "MEAL BUDGET / MOJE TEMPO (obowiązkowe: przepis oparty na profilu biologicznym + celu + dzisiejszej aktywności + tym, co DZIŚ JUŻ ZJADŁEŚ; zachowaj ±15% kcal; nie wymyślaj danych zdrowotnych):",
+            'intent' => 'cel posiłku na dziś',
+            'target' => 'target_kcal dla TEGO posiłku (z odliczeniem dzisiejszego spożycia)',
+            'acceptable' => 'dopuszczalne',
+            'tdee' => 'TDEE / budżet dzienny',
+            'build' => 'Ułóż danie WYRAŹNIE pod ten budżet (nie danie ogólne).',
+            'no_overload' => 'NIE przeciążaj: jeśli dziś zjedzono już dużo, zrób lżejszy posiłek i zbilansuj pozostałe makroskładniki.',
+            'fuel_why' => 'Obowiązkowo: pole `fuel_why` (2–4 zdania w języku przepisu) wyjaśniające, DLACZEGO wybrano TE składniki na podstawie: celu z profilu, dzisiejszej aktywności/snu, tego, co już dziś zjedzono, celu posiłku oraz ograniczeń spiżarni/terminów. Podaj 2–4 konkretne składniki i powód (np. białko po treningu, węglowodany do regeneracji, warzywa dla niskokaloryczności).',
+            'nutrition_note' => 'W nutrition_note jedno zdanie o zgodności kcal/makroskładników. Wartości w `nutrition` muszą być bliskie celu.',
         ],
     ];
     $fl = $fuelLabels[$lang] ?? $fuelLabels['en'];

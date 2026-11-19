@@ -6,7 +6,7 @@
 
 **[Website](https://evershelf.site/)** · **[Demo](https://evershelf.site/demo)** · **[Wiki](https://github.com/dadaloop82/EverShelf/wiki)** · **[Changelog](CHANGELOG.md)**
 
-[![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![PHP 8+](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://www.php.net/) [![Version](https://img.shields.io/badge/version-2.2.10-brightgreen.svg)](CHANGELOG.md) [![CI](https://github.com/dadaloop82/EverShelf/actions/workflows/ci.yml/badge.svg)](https://github.com/dadaloop82/EverShelf/actions/workflows/ci.yml)
+[![MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![PHP 8+](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://www.php.net/) [![Version](https://img.shields.io/badge/version-2.2.8-brightgreen.svg)](CHANGELOG.md) [![CI](https://github.com/dadaloop82/EverShelf/actions/workflows/ci.yml/badge.svg)](https://github.com/dadaloop82/EverShelf/actions/workflows/ci.yml)
 
 </div>
 
@@ -197,7 +197,7 @@ pack of that article in that place, so the same name is never asked twice.
 ### 6. Text and vocabulary are data — six locales, enforced
 
 Every user-facing string is a translation key in `translations/*.json` (IT · EN · DE · FR ·
-ES · ZH) and every product word lives in `api/vocab/<lang>.json`. CI fails on a key that is
+ES · ZH · PL) and every product word lives in `api/vocab/<lang>.json`. CI fails on a key that is
 used but missing, on a generated file that no longer matches its JSON, and on vocabulary words
 creeping back into the logic files.
 
@@ -226,27 +226,6 @@ the gate this release was developed against.
 
 <details open>
 <summary><b>Last five releases</b></summary>
-
-**v2.2.10 — a recipe that lost an ingredient remembers it.** The screensaver kept proposing a
-«pizza margherita» whose pizza was finished, and opening it showed nothing missing: the pantry
-filter had *deleted* that row (it was not on a shelf) and only recorded the deletion when the
-shopping mode was on. Now what the pantry could not give is always recorded, the archive and the
-idle screen count it as missing (so the dish is not proposed), the recipe sheet says «La dispensa
-non aveva: …» instead of a list that silently lost a line, Mealie coverage uses the same matcher
-that actually links the ingredients (so «Pizza alta regina» no longer covers «Pizza margherita»),
-and a trace — 0.4 g of flour — is no longer stock.
-
-**v2.2.9 — the Health Bridge, rebuilt from zero.** The Android companion is now *EverShelf
-Health Bridge*: five tabs (Today / Diary / Charts / Control / Info), every biometric Health
-Connect exposes, 7/30/90-day charts drawn without a chart library, a diary that keeps the
-household's notes — in the **same six languages as EverShelf** (it/en/de/fr/es/zh), an eight-step setup wizard that asks the language first and then every parameter, and a rule
-that is now enforced by code: **data leaves the phone only when EverShelf ANSWERS**, so a day
-spent outside the house waits in a local queue instead of being lost or retried in a storm. It
-updates itself over the LAN first (the workflow now publishes the APK in `releases/`) and GitHub
-second, and installs only an APK with the same signature and a higher `versionCode` — the
-build refuses to publish anything that Android would make you uninstall first. Crashes and sync
-failures are reported through `report_error` into their own river (`data/logs/health-*.log`)
-and, when the instance is configured for it, into a GitHub issue like the rest of EverShelf.
 
 **v2.2.8 — a translation that carries markup was printed as text.** In the «usa / finito tutto»
 chooser the line «Finita **1 confezione** ({qty})» carries a `<strong>` by design, and it was wrapped
@@ -313,7 +292,7 @@ Older releases live in [CHANGELOG.md](CHANGELOG.md).
 [MCP server](mcp-server/README.md) · [Health Bridge](evershelf-health-bridge/README.md) ·
 [Android kiosk](evershelf-kiosk/README.md)
 
-**Languages:** Italiano · English · Deutsch · Français · Español · 中文 — the interface is
+**Languages:** Italiano · English · Deutsch · Français · Español · 中文 · Polski — the interface is
 translated entirely, including the idle screen and every server message.
 
 ---

@@ -53,7 +53,7 @@ dispensa/
 │   │   ├── receipt.js          # paper-receipt OCR (parked, opt-in)
 │   │   └── app.js              # the rest of the SPA (the remaining split is in "Planned refactors")
 │   └── vendor/                 # Offline CDN fallbacks (quagga, tesseract, transformers, zbar)
-├── translations/               # it, en, de, fr, es, zh (+ _SUPPORTED_LANGS in app.js)
+├── translations/               # it, en, de, fr, es, zh, pl (+ _SUPPORTED_LANGS in app.js)
 ├── data/                       # Runtime data (.htaccess: deny all)
 ├── logs/                       # Application logs (.htaccess: deny all)
 ├── mcp-server/                 # MCP bridge (ESM Node, talks to the same REST API)

@@ -32,7 +32,7 @@ require_once __DIR__ . '/env.php';
 /** The languages the demo seed ships with (the same set as `api/vocab/*.json`). */
 function evershelfDemoLangs(): array
 {
-    return ['it', 'en', 'de', 'fr', 'es', 'zh'];
+    return ['it', 'en', 'de', 'fr', 'es', 'zh', 'pl'];
 }
 
 /** `1`, `true`, `yes`, `on`, `demo` — the values a `.env` or a URL may use. */

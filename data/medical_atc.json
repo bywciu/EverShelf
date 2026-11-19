@@ -49,6 +49,13 @@
                     "发烧",
                     "疼痛",
                     "感冒"
+                ],
+                "pl": [
+                    "ból głowy",
+                    "migrena",
+                    "gorączka",
+                    "ból",
+                    "przeziębienie"
                 ]
             }
         },
@@ -97,6 +104,13 @@
                     "肌肉痛",
                     "瘀伤",
                     "膝盖"
+                ],
+                "pl": [
+                    "stan zapalny",
+                    "ból pleców",
+                    "ból mięśni",
+                    "siniak",
+                    "kolano"
                 ]
             }
         },
@@ -145,6 +159,13 @@
                     "打喷嚏",
                     "荨麻疹",
                     "花粉症"
+                ],
+                "pl": [
+                    "alergia",
+                    "swędzenie",
+                    "kichanie",
+                    "pokrzywka",
+                    "katar sienny"
                 ]
             }
         },
@@ -193,6 +214,13 @@
                     "烧心",
                     "胃酸",
                     "消化不良"
+                ],
+                "pl": [
+                    "żołądek",
+                    "refluks",
+                    "zgaga",
+                    "nadkwasota",
+                    "niestrawność"
                 ]
             }
         },
@@ -233,6 +261,12 @@
                     "咳嗽",
                     "痰",
                     "支气管"
+                ],
+                "pl": [
+                    "kaszel",
+                    "flegma",
+                    "śluz",
+                    "oskrzela"
                 ]
             }
         },
@@ -274,6 +308,12 @@
                     "鼻塞",
                     "鼻窦炎",
                     "感冒鼻塞"
+                ],
+                "pl": [
+                    "zatkany nos",
+                    "katar",
+                    "niedrożność nosa",
+                    "zapalenie zatok"
                 ]
             }
         },
@@ -310,6 +350,11 @@
                     "真菌感染",
                     "脚气",
                     "霉菌"
+                ],
+                "pl": [
+                    "grzybica",
+                    "grzybica stóp",
+                    "pleśniawki"
                 ]
             }
         },
@@ -353,6 +398,13 @@
                     "眼睛",
                     "干眼",
                     "结膜炎"
+                ],
+                "pl": [
+                    "oko",
+                    "oczy",
+                    "suche oczy",
+                    "zapalenie spojówek",
+                    "podrażnienie oczu"
                 ]
             }
         },
@@ -389,6 +441,11 @@
                     "焦虑",
                     "失眠",
                     "烦躁"
+                ],
+                "pl": [
+                    "lęk",
+                    "pobudzenie",
+                    "bezsenność"
                 ]
             }
         },
@@ -449,6 +506,15 @@
                     "背部",
                     "挫伤",
                     "凝胶"
+                ],
+                "pl": [
+                    "stan zapalny",
+                    "ból mięśni",
+                    "mięśnie",
+                    "kolano",
+                    "plecy",
+                    "siniak",
+                    "żel"
                 ]
             }
         },
@@ -485,6 +551,11 @@
                     "抗酸",
                     "胃酸",
                     "烧心"
+                ],
+                "pl": [
+                    "środek zobojętniający",
+                    "nadkwasota",
+                    "zgaga"
                 ]
             }
         },
@@ -538,6 +609,14 @@
                     "皮疹",
                     "皮肤刺激",
                     "皮质激素"
+                ],
+                "pl": [
+                    "zapalenie skóry",
+                    "rumień",
+                    "egzema",
+                    "wysypka",
+                    "podrażniona skóra",
+                    "kortyzon"
                 ]
             }
         }
